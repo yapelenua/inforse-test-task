@@ -10,7 +10,6 @@ import { EmptyPlug } from '../components/EmptyPlug';
 export const MainPage: React.FC = () => {
   const [searchValue, setSearchValue] = useState<string>('');
   const [suggestions, setSuggestions] = useState<ISuggestion[]>([]);
-  const [selectedSuggestion, setSelectedSuggestion] = useState<string>('');
   const [posts, setPosts] = useState<IPost[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(0);
@@ -46,7 +45,6 @@ export const MainPage: React.FC = () => {
 
   const handleSuggestionClick = (suggestion: ISuggestion) => {
     setSearchValue(suggestion.title);
-    setSelectedSuggestion(suggestion.title);
     setSuggestions([]);
   };
 
